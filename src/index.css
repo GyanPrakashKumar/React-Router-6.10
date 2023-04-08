@@ -4,19 +4,23 @@
   --primary: #bc4123;
   --secondary: #2b3452;
 }
+
 body {
   margin: 0;
   padding: 20px;
   font-family: "Poppins";
   background: var(--secondary);
 }
+
 * {
   color: #fff;
   margin: 0;
 }
+
 p {
   margin: 20px 0;
 }
+
 button {
   border: 0;
   padding: 8px;
@@ -34,17 +38,53 @@ header nav {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 header nav a {
   text-decoration: none;
   padding: 6px;
 }
+
 header nav h1 {
   margin-right: auto;
   border-bottom: 3px solid var(--primary);
 }
+
 header nav a.active {
   border-bottom: 3px solid var(--primary);
 }
+header .menuIcons {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  header nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .menuIcons {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  /* header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--secondary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  } */
+}
+
+
 /* page content */
 main {
   max-width: 1200px;
@@ -58,22 +98,42 @@ main {
   gap: 30px;
   margin: 30px 0;
 }
-.help-layout nav a{
+
+.help-layout nav a {
   padding: 10px;
   border: 2px solid white;
   border-radius: 4px;
   text-decoration: none;
 }
-.help-layout nav a:hover{
+
+.help-layout nav a:hover {
   border-color: var(--primary);
 }
+
 .help-layout nav a.active {
   background: var(--primary);
 }
 
+/* Home page */
+.home {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: 70vh;
+}
+.home .icon {
+  position: absolute;
+  font-size: 30rem;
+  z-index: -1;
+  filter: opacity(.5);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* faq */
 .faq .question {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 5px 20px;
   border-radius: 4px;
   margin: 20px 0;
@@ -83,14 +143,19 @@ main {
 form {
   max-width: 340px;
   margin-top: 30px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 4px;
 }
-form input, form label span, form textarea {
+
+form input,
+form label span,
+form textarea {
   display: block;
 }
-form input, form textarea {
+
+form input,
+form textarea {
   margin-bottom: 30px;
   padding: 8px;
   border-radius: 4px;
@@ -98,9 +163,14 @@ form input, form textarea {
   width: 300px;
   color: var(--secondary);
 }
+
 form label span {
   margin-bottom: 10px;
 }
+form .formError {
+  color: red;
+}
+
 /* Error Page */
 .error {
   display: flex;
@@ -109,59 +179,91 @@ form label span {
   justify-content: center;
   height: 70vh;
 }
+
 .error h1 {
   font-size: 20rem;
   color: #4a567c;
 }
+
 .error h2 {
   position: absolute;
   top: 35%;
   font-size: 3rem;
 }
+
 .error p {
   font-size: 1.5rem;
   margin: 20px 0;
 }
+
 .error a {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.error a:hover{
+
+.error a:hover {
   color: var(--primary);
 }
 
 /* careers list */
-.careers > a {
+.careers>a {
   display: block;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 4px;
   margin: 20px 0;
   text-decoration: none;
 }
-.careers > a:hover p {
+
+.careers>a:hover p {
   color: var(--primary);
 }
+
 .careers p {
   margin: 0;
 }
-.careers > a p:last-child {
- font-size: 0.8em;
- color: #bbb;
-} 
-.careers > a p:first-child {
+
+.careers>a p:last-child {
+  font-size: 0.8em;
+  color: #bbb;
+}
+
+.careers>a p:first-child {
   font-weight: bold;
 }
-.careers > a p:nth-child(2) {
+
+.careers>a p:nth-child(2) {
   margin: 10px 0;
 }
 
 /* careers details */
 .career-details {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 4px;
   margin: 20px 0;
 }
 
 /* breadcrumbs */
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.breadcrumbs>* {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.breadcrumbs .crumbs:after {
+  content: '>';
+  margin-left: 5px;
+}
+
+.breadcrumbs .crumbs:last-child:after {
+  display: none;
+}
+.breadcrumbs .crumbs a {
+  color: #ddd;
+  text-decoration: none;
+}
